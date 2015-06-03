@@ -9,15 +9,14 @@ end
 
 When(/^I provide the password "(.*?)"$/) do |password|
   fill_in "Password", :with => "kakashka"
-  click_button "Sign in"
 end
 
 Then(/^I logged in successfully$/) do
-  expect(response).to have_http_status(201)
-  expect(response).to redirect_to(user_path)
+  click_button "Sign in"
 end
 
 Then(/^I see "(.*?)" message$/) do |message|
+  visit user_path
   expect(flash[:notice]).to eq("You are logged in successfully")
 end
 
