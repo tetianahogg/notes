@@ -1,4 +1,4 @@
-Feature: Working with Notes
+Feature: Logging in
   As user I can create, update, delete notes
 
   Scenario: valid credentials
